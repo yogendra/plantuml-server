@@ -3,3 +3,7 @@ target
 .classpath
 .project
 .checkstyle
+.idea
+.gradle
+plantumlservlet.iml
+
