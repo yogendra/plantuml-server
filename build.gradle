@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+        classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.akhikhl.gretty'
+apply plugin: "com.palantir.docker-run"
+
+group = 'org.sourceforge.plantuml'
+version = '1-SNAPSHOT'
+
+description = "PlantUML Servlet"
+
+sourceCompatibility = 1.8
+
+
+
+repositories {
+    jcenter()
+    maven { url "http://jcenter.bintray.com" }
+    maven { url "http://repo.fusesource.com/nexus/content/groups/public/" }
+    maven { url "http://repo.fusesource.com/nexus/content/groups/public-snapshots/" }
+    maven { url "https://repository.apache.org/content/groups/public/" }
+}
+dependencies {
+    compile 'net.sourceforge.plantuml:plantuml:2017.09'
+    compile 'com.sparkjava:spark-core:2.5.5'
+    compile 'org.webjars:codemirror:3.21'
+    testCompile 'junit:junit:4.12'
+    testCompile 'httpunit:httpunit:1.7'
+    testCompile 'rhino:js:1.7R2'
+
+
+}
+
+
